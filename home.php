@@ -122,14 +122,16 @@ class User {
         <div class="position-fixed bg-dark d-flex flex-column align-items-center py-4 menu"
             style="width: 80px; z-index: 4; height: 90%;">
             <i class="fa-solid fa-bars text-light" style="font-size: 30px; cursor: pointer;" id="menu"></i>
-            <i id="log_out" class="fa-solid fa-right-from-bracket" style="color: #ffffff; font-size: 30px; margin-bottom: 5%; margin-top: auto; cursor: pointer;"></i>
+            <i id="log_out" class="fa-solid fa-right-from-bracket" style="color: #ffffff; font-size: 30px; margin-bottom: 5%; margin-top: auto; cursor: pointer; "></i>
         </div>
     </div>
-    <div id="container_confirm_exit" class="w-25 bg-light border border-1 shadow border-dark flex-column justify-content-center align-items-center" style="z-index: 10; height: 25vh; position: absolute; gap: 30px; display: none;">
-        <label for="" class="h5">Apakah anda ingin keluar?</label>
-        <div class="w-100 d-flex justify-content-center align-items-center">
-            <button class="w-25 mx-2 border-1 rounded fw-bold" onclick="noexit()">NO</button>
-            <button class="w-25 mx-2 border-0 rounded text-light fw-bold bg-danger" onclick="exit()">YES</button>
+    <div id="container_confirm_exit" class="col-12 h-100 align-items-center justify-content-center position-absolute" style="background-color: rgba(0 ,0,0,0.5); z-index: 10; display: none;" onclick="noexit()">
+        <div class="w-25 bg-light border border-1 d-flex shadow border-dark flex-column justify-content-center align-items-center" style=" height: 25vh;  gap: 30px; ">
+            <label for="" class="h5">Apakah anda ingin keluar?</label>
+            <div class="w-100 d-flex justify-content-center align-items-center">
+                <button class="w-25 mx-2 border-1 rounded fw-bold" onclick="noexit()">NO</button>
+                <button class="w-25 mx-2 border-0 rounded text-light fw-bold bg-danger" onclick="exit()">YES</button>
+            </div>
         </div>
     </div>
 </div>
