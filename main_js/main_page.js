@@ -2,6 +2,18 @@ var menu = document.getElementById('menu');
 var slidebar = document.getElementById('slide');
 var logout = document.getElementById('log_out');
 var containerinfo = document.getElementById('container_confirm_exit');
+var closemenu = document.querySelectorAll('#navigation-page')
+var slidemove = document.getElementById('scroll')
+
+if (closemenu.length > 0) {
+    closemenu.forEach((menu, index) => {
+        menu.addEventListener("click", function() {
+            var translateXValue = -848 * index;
+            slidemove.style.transform = `translateX(${translateXValue}px)`;
+            slide();
+        });
+    });
+}
 
 menu.addEventListener('click', function() {
     // Check if the sidebar is in the "slide" position
@@ -29,7 +41,6 @@ menu.addEventListener('click', function() {
             fill: 'forwards'
         });
         menu.setAttribute("class", "fa-solid fa-bars text-light");
-        console.log(slidebar.getAttribute("class"));
     } else {
         // Change back to "slide" class
         slidebar.setAttribute("class", "slide position-fixed bg-danger flex-column align-items-start pt-2 px-4");
@@ -55,7 +66,6 @@ menu.addEventListener('click', function() {
             fill: 'forwards'
         });
         menu.setAttribute("class", "fa-solid fa-x text-light");
-        console.log(slidebar.getAttribute("class"));
     }
 });
 
@@ -71,4 +81,32 @@ function noexit(){
 
 function exit(){
     window.location.href = "log_out.php"
+}
+
+function slide(){ 
+    if (slidebar.getAttribute("class") === "slide position-fixed bg-danger flex-column align-items-start pt-2 px-4") {
+    // Change to "slide-reverse" class
+        slidebar.setAttribute("class", "slide-reverse position-fixed bg-danger flex-column align-items-start pt-2 px-4");
+
+        // Slide-out animation (translate to the right)
+        slidebar.animate([
+            { transform: 'translateX(0)' },
+            { transform: 'translateX(400px)' }
+        ], {
+            duration: 500,
+            easing: 'ease-in-out',
+            fill: 'forwards' // Maintain the end state after animation
+        });
+
+        // Rotate the menu icon back to the bars
+        menu.animate([
+            {transform: 'rotate(90deg)'},
+            {transform: 'rotate(0deg)'}
+        ],{
+            duration: 500,
+            easing: 'ease-in-out',
+            fill: 'forwards'
+        });
+        menu.setAttribute("class", "fa-solid fa-bars text-light");
+    }
 }

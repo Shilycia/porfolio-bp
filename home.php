@@ -88,10 +88,14 @@ class User {
             box-shadow: 1px 1px 2px black;
         }
 
+        #scroll{
+            transition: all 1s ease-in-out;
+        }
+
     </style>
 </head>
 <body>
-<div class="col-12 vh-100 d-flex bg-warning align-items-center justify-content-center">
+<div class="col-12 vh-100 bg-warning align-items-center justify-content-center" style="display: flex;">
     <div class="col-10 bg-light d-flex shadow justify-content-end" style="height: 90%; border-bottom-left-radius: 30px; border-top-left-radius: 30px; overflow: hidden;">
         <!-- Left Profile Sidebar -->
         <div style="width: 30%; border-bottom-left-radius: 30px; border-top-left-radius: 30px; box-shadow: 2px 0px 10px 1px black; z-index: 2;" class="d-flex flex-column bg-dark align-items-center h-100 border-end">
@@ -100,12 +104,44 @@ class User {
         </div>
 
         <!-- Right Content Section -->
-        <div style="width: 70%; z-index: 1;" class="d-flex bg-light flex-column align-items-start h-100 p-5">
-            <label for="" class="h2 fw-bold"><?= $val[0]?></label>
-            <label for="" class="mt-5 h4">About</label>
-            <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
-            <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
-            <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+        <div style="width: 70%; z-index: 1; overflow-x: hidden" class="d-flex bg-light h-100">
+            <div id="scroll" class="d-flex bg-light h-100 w-auto" style="min-width: 4240px;">
+                <div id="About_content" style="display: flex; width: 20%; left: 0;" class="bg-light flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
+                    <label for="" class="mt-5 h4">About</label>
+                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
+                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
+                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                </div>
+                <div id="About_content" style="display: flex; width: 20%;" class="bg-dark text-light flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
+                    <label for="" class="mt-5 h4">About</label>
+                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
+                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
+                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                </div>
+                <div id="About_content" style="display: flex; width: 20%;" class="bg-danger flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
+                    <label for="" class="mt-5 h4">About</label>
+                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
+                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
+                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                </div>
+                <div id="About_content" style="display: flex; width: 20%;" class="bg-success flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
+                    <label for="" class="mt-5 h4">About</label>
+                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
+                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
+                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                </div>
+                <div id="About_content" style="display: flex; width: 20%;" class="bg-info flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
+                    <label for="" class="mt-5 h4">About</label>
+                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
+                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
+                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                </div>
+            </div>
         </div>
 
         <!-- Sidebar Menu (Hidden/Sliding) -->
@@ -135,6 +171,7 @@ class User {
         </div>
     </div>
 </div>
+
 <script src="main_js/main_page.js"></script>
 </body>
 </html>
