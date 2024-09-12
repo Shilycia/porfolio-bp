@@ -17,9 +17,9 @@ if (closemenu.length > 0) {
 
 menu.addEventListener('click', function() {
     // Check if the sidebar is in the "slide" position
-    if (slidebar.getAttribute("class") === "slide position-fixed bg-danger flex-column align-items-start pt-2 px-4") {
+    if (slidebar.getAttribute("class") === "slide position-fixed bg-light flex-column align-items-start pt-2 px-4 border border-dark border-end-0") {
         // Change to "slide-reverse" class
-        slidebar.setAttribute("class", "slide-reverse position-fixed bg-danger flex-column align-items-start pt-2 px-4");
+        slidebar.setAttribute("class", "slide-reverse position-fixed bg-light flex-column align-items-start pt-2 px-4 border border-dark border-end-0");
 
         // Slide-out animation (translate to the right)
         slidebar.animate([
@@ -43,7 +43,7 @@ menu.addEventListener('click', function() {
         menu.setAttribute("class", "fa-solid fa-bars text-light");
     } else {
         // Change back to "slide" class
-        slidebar.setAttribute("class", "slide position-fixed bg-danger flex-column align-items-start pt-2 px-4");
+        slidebar.setAttribute("class", "slide position-fixed bg-light flex-column align-items-start pt-2 px-4 border border-dark border-end-0");
         slidebar.style.display = "flex"; // Ensure it's visible
         
         // Slide-in animation (translate to the left)
@@ -84,9 +84,9 @@ function exit(){
 }
 
 function slide(){ 
-    if (slidebar.getAttribute("class") === "slide position-fixed bg-danger flex-column align-items-start pt-2 px-4") {
+    if (slidebar.getAttribute("class") === "slide position-fixed bg-light flex-column align-items-start pt-2 px-4 border border-dark border-end-0") {
     // Change to "slide-reverse" class
-        slidebar.setAttribute("class", "slide-reverse position-fixed bg-danger flex-column align-items-start pt-2 px-4");
+        slidebar.setAttribute("class", "slide-reverse position-fixed bg-light flex-column align-items-start pt-2 px-4 border border-dark border-end-0");
 
         // Slide-out animation (translate to the right)
         slidebar.animate([

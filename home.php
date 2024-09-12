@@ -74,7 +74,7 @@ class User {
             position: fixed;
             height: 100vh;
             background: white;
-            translate: 110px -30px;
+            translate: 110px -40px;
             background-color: #ffc107;
         }
 
@@ -85,78 +85,156 @@ class User {
 
         #navigation-page:hover{
             transform: scale(1.1);
-            box-shadow: 1px 1px 2px black;
         }
 
         #scroll{
-            transition: all 1s ease-in-out;
+            transition: all 1s ease-out;
         }
 
+        button{
+            transition: all 0.1s ease-in;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+        }
+
+        #log_out{
+            transition: all 0.1s ease-in;
+        }
+
+        #log_out:hover{
+            transform: scale(1.1);
+        }
+
+        #menu{
+            transition: all 0.1s ease-in;
+        }
+
+        #menu:hover{
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
 <div class="col-12 vh-100 bg-warning align-items-center justify-content-center" style="display: flex;">
     <div class="col-10 bg-light d-flex shadow justify-content-end" style="height: 90%; border-bottom-left-radius: 30px; border-top-left-radius: 30px; overflow: hidden;">
-        <!-- Left Profile Sidebar -->
+        <!-- profile -->
         <div style="width: 30%; border-bottom-left-radius: 30px; border-top-left-radius: 30px; box-shadow: 2px 0px 10px 1px black; z-index: 2;" class="d-flex flex-column bg-dark align-items-center h-100 border-end">
             <img src="asset/profile_<?= $val[2]?>" alt="" width="35%" class="rounded-circle mt-5 custom-box-shadow">
             <label for="" class="h4 fw-bold mt-5 text-light"><?= $val[0]?></label>
         </div>
 
-        <!-- Right Content Section -->
+        <!-- column content -->
         <div style="width: 70%; z-index: 1; overflow-x: hidden" class="d-flex bg-light h-100">
             <div id="scroll" class="d-flex bg-light h-100 w-auto" style="min-width: 4240px;">
                 <div id="About_content" style="display: flex; width: 20%; left: 0;" class="bg-light flex-column align-items-start h-100 p-5">
-                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
-                    <label for="" class="mt-5 h4">About</label>
-                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
-                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
-                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                    <label for="" class="h2 fw-bold"><i class="fa-solid fa-user me-3"></i> Profile</label>
                 </div>
                 <div id="About_content" style="display: flex; width: 20%;" class="bg-dark text-light flex-column align-items-start h-100 p-5">
-                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
-                    <label for="" class="mt-5 h4">About</label>
-                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
-                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
-                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                    <label for="" class="h2 fw-bold"><i class="fa-solid fa-table me-3"></i></i> Table</label>
+                    <label for="" class="h4 fw-bold mt-4">Skils</label>
+                    <div class="w-100 d-flex align-content-start" style="max-height: 40%; overflow-y: scroll;">
+                        <table class="table table-hover table-light text-center mt-2">
+                            <thead class="position-sticky top-0"> 
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Skils</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>HTML 5</td>
+                                    <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque soluta ipsa pariatur atque dolores obcaecati sit, cumque corrupti rerum eaque!</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>CSS 3</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veniam commodi amet porro minima maxime similique fugiat. Porro, voluptatem neque.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Java Script</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nulla eveniet, ipsam autem quisquam at fugiat vero beatae impedit ex!</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>C#</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nulla eveniet, ipsam autem quisquam at fugiat vero beatae impedit ex!</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Blender</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nulla eveniet, ipsam autem quisquam at fugiat vero beatae impedit ex!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <label for="" class="h4 fw-bold mt-4">Experience</label>
+                    <div class="w-100" style="max-height: 40%; overflow-y: scroll;">
+                        <table class="table table-hover table-light text-center mt-2">
+                            <thead class="position-sticky top-0"> 
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>   
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td>Larry the bus</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div id="About_content" style="display: flex; width: 20%;" class="bg-danger flex-column align-items-start h-100 p-5">
-                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
-                    <label for="" class="mt-5 h4">About</label>
-                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
-                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
-                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                <div id="About_content" style="display: flex; width: 20%;" class="bg-dark text-light flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><i class="fa-solid fa-fire me-3"></i></i> Skils</label>
                 </div>
-                <div id="About_content" style="display: flex; width: 20%;" class="bg-success flex-column align-items-start h-100 p-5">
-                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
-                    <label for="" class="mt-5 h4">About</label>
-                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
-                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
-                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                <div id="About_content" style="display: flex; width: 20%;" class="bg-dark text-light flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><i class="fa-solid fa-circle-info me-3"></i> About</label>
                 </div>
-                <div id="About_content" style="display: flex; width: 20%;" class="bg-info flex-column align-items-start h-100 p-5">
-                    <label for="" class="h2 fw-bold"><?= $val[0]?></label>
-                    <label for="" class="mt-5 h4">About</label>
-                    <p class="mt-2 h6 pe-5"><?= $val[3]?></p>
-                    <label for="" class="h5 mb-1 mt-auto fw-bold">Contact:</label>
-                    <label for="" class="mb-1 mt-1 ms-4 fw-bold">Email: <span class="fw-normal"><?= $val[1] ?></span></label>
+                <div id="About_content" style="display: flex; width: 20%;" class="bg-dark text-light flex-column align-items-start h-100 p-5">
+                    <label for="" class="h2 fw-bold"><i class="fa-solid fa-gear me-3"></i> Setting</label>
                 </div>
             </div>
         </div>
-
-        <!-- Sidebar Menu (Hidden/Sliding) -->
-        <div id="slide" class="position-fixed bg-danger flex-column align-items-start pt-2 px-4"
+        
+        <!-- Hidden Insert Skill -->
+        
+        
+        <!-- menu slide -->
+        <div id="slide" class="position-fixed bg-light flex-column align-items-start pt-2 px-4 border border-dark border-end-0"
             style="width: 25%; margin-right: 80px; z-index: 1; height: 90%; display: none;">
-            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-light fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-user me-3"></i>Profile</label>
-            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-light fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-table me-3"></i>Table</label>
-            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-light fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-fire me-3"></i>Skils</label>
-            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-light fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-circle-info me-3"></i>About</label>
-            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-light fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-gear me-3"></i>Setting</label>
+            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-dark fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-user me-3"></i>Profile</label>
+            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-dark fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-table me-3"></i>Table</label>
+            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-dark fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-fire me-3"></i>Skils</label>
+            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-dark fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-circle-info me-3"></i>About</label>
+            <label id="navigation-page" class="w-100 border-bottom border-2 border-dark my-2 d-flex align-items-center justify-content-start ps-3 text-dark fw-bold" style="height: 10%; font-size: 20px;"><i class="fa-solid fa-gear me-3"></i>Setting</label>
         </div>
 
-        <!-- Fixed Side Menu Icon -->
-        <div class="position-fixed bg-dark d-flex flex-column align-items-center py-4 menu"
-            style="width: 80px; z-index: 4; height: 90%;">
+        <!-- menu page -->
+        <div class="position-fixed bg-dark d-flex flex-column align-items-center py-4 menu border-start"
+            style="width: 80px; z-index: 4; height: 90%; box-shadow: -2px 0px 5px black;">
             <i class="fa-solid fa-bars text-light" style="font-size: 30px; cursor: pointer;" id="menu"></i>
             <i id="log_out" class="fa-solid fa-right-from-bracket" style="color: #ffffff; font-size: 30px; margin-bottom: 5%; margin-top: auto; cursor: pointer; "></i>
         </div>
